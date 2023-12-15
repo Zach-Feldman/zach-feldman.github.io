@@ -194,6 +194,10 @@ img{
 }
 
 
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+
 
 /*** MOBILE ***/
 /* Hamburger Menu Icon */
@@ -217,6 +221,18 @@ img{
     transition: all 0.3s ease-in-out;
 }
 
+.hamburger-menu span:nth-child(1) {
+    width: 35px; /* Longest line */
+}
+
+.hamburger-menu span:nth-child(2) {
+    width: 25px; /* Shorter line */
+}
+
+.hamburger-menu span:nth-child(3) {
+    width: 15px; /* Shortest line */
+}
+
 /* Styles when the menu is active */
 /* Rotate first bar */
 .hamburger-menu.active span:nth-child(1) {
@@ -231,6 +247,7 @@ img{
 /* Rotate third bar */
 .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
+    width: 35px;
 }
 
 /* Mobile Styles */
@@ -243,16 +260,18 @@ img{
 
     .sidebar {
         position: fixed;
-        left: 0;
-        right: 0;
-        bottom: -100%; /* Hide it off-screen - -100%*/
-        width: 100%;
-        height: 100vh; /* Adjust height as needed - 800px*/
-        /* Add other styles (background, padding, etc.) */
-        transition: bottom 0.3s ease;
-        
-        overflow-y: scroll;
-        z-index: 900;
+        left: -100%; /* Start off-screen to the left */
+        top: 0;
+        height: 100%;
+        width: 100%; /* Adjust width as needed :: 250px*/
+        background-color: yellow; /* Example background color */
+        transition: left 0.3s ease;
+        z-index: 900; /* Below the hamburger menu */
+        overflow-y: auto; /* Enable scrolling */
+    }
+
+    .sidebar.active {
+        left: 0; /* Slide in from the left */
     }
 
     /* Adjust grid layout for mobile */
@@ -276,7 +295,7 @@ img{
         left: 0;
         right: 0;
         
-        z-index: 800;
+        z-index: 900;
     }
     
     /* Main */

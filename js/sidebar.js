@@ -116,6 +116,7 @@ $(document).ready(function() {
     // Insert the sidebar into a container element
     $('.sidebar').html(sidebarHtml);
     
+    
     // Function to highlight the current page in the sidebar
     function highlightCurrentPage() {
         var currentPath = window.location.pathname.split("/").pop();
@@ -132,20 +133,12 @@ $(document).ready(function() {
     highlightCurrentPage();
     
     
-    // Function to toggle sidebar
+    // Toggle mobile menu
     $('.hamburger-menu').click(function() {
-        var sidebar = $('.sidebar');
-        var hamburger = $(this);
-        
-        // Check if the sidebar is visible
-        if (sidebar.css('bottom') === '-1500px') { // Match this value with your sidebar's height - -800px
-            sidebar.css('bottom', '0'); // Slide up the sidebar
-            hamburger.addClass('active'); // Transform to 'X'
-        } else {
-            sidebar.css('bottom', '-1500px'); // Slide down the sidebar - -800px
-            hamburger.removeClass('active'); // Revert to hamburger icon
-        }
+        $(this).toggleClass('active'); // Toggle the 'active' class for the hamburger menu
+        $('.sidebar').toggleClass('active'); // Toggle the 'active' class for the sidebar
     });
+    
      
 });
 
