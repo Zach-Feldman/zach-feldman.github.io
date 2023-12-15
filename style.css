@@ -208,8 +208,8 @@ img{
     right: 20px; /* Adjust as needed for horizontal alignment */
     z-index: 1000; /* Ensure it's above other content */
     cursor: pointer;
-
-    /* Hamburger icon bars styling */
+    
+    background-color: transparent !important;
 }
 
 .hamburger-menu span {
@@ -217,7 +217,7 @@ img{
     width: 25px; /* Width of the bar */
     height: 3px; /* Height of the bar */
     margin: 5px 0; /* Space between bars */
-    background-color: #333; /* Color of the bar */
+    background-color: #000000; /* Color of the bar */
     transition: all 0.3s ease-in-out;
 }
 
@@ -254,7 +254,7 @@ img{
 @media screen and (max-width: 768px) {
     .hamburger-menu {
         display: block; /* Show the hamburger icon in mobile view */
-        
+        background-color: transparent !important;
         z-index: 1000;
     }
 
