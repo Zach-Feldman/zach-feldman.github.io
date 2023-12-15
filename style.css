@@ -47,6 +47,11 @@ a:active{
     font-weight: 700;
 }
 
+img{
+    width: 100%;
+    height: auto;
+}
+
 
 /*** CONTAINER GRID ***/
 .container{
@@ -56,7 +61,7 @@ a:active{
     grid-template-areas:
         "header main main main main"
         "sidebar main main main main"
-        "footer footer footer footer footer";
+        "footer main main main main";
     
     
     /*grid-column-gap: 3px;
@@ -70,7 +75,7 @@ a:active{
 }
 
 .container > div {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #f0f8ff;
   text-align: left;
   font-size: 12px;
 }
@@ -136,6 +141,11 @@ a:active{
     font-size: 12px;
 }
 
+#projects p{
+    font-size: 12px;
+    margin: 10px 0 10px 0;
+}
+
 #credit{
     margin-top: 15px;
     margin-left: 25px;
@@ -153,11 +163,28 @@ a:active{
 /*** MAIN ***/
 .main{
     grid-area: main;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .main-container{
     display: block;
-    margin: 25px;
+    margin: 25px 10% 100px 50px;
+}
+
+.main-container p{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.main-container img{
+    width: 75%;
+    height: auto;
+}
+
+#text-container{
+    width: 75%;
+    height: auto;
 }
 
 
@@ -225,12 +252,48 @@ a:active{
 
     /* Adjust grid layout for mobile */
     .container {
+        display: grid;
         grid-template-areas:
             "header"
             "main"
             "footer";
         grid-template-columns: 1fr;
+        grid-template-rows: 80px auto 50px;
+        height: 100vh; /* Full viewport height */
     }
+    
+    /* Header */
+    .header{
+        position: fixed;
+        width: 100%;
+    }
+    
+    /* Main */
+    .main{
+        grid-area: main;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+    
+    .main-container{
+        margin: 25px;
+    }
+
+    .main-container p{
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .main-container img{
+        width: 100%;
+        height: auto;
+    }
+
+    #text-container{
+        width: 100%;
+        height: auto;
+    }
+    
 }
 
 

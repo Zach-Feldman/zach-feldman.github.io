@@ -6,11 +6,8 @@ $(document).ready(function() {
     const sidebarHtml = `
         <div class="sidebar-container">
             <!-- ABOUT -->
-            <h2>About</h2>
-            <div id="projects">
-                <p><a href="bio.html">Bio</a></p>
-                <p><a href="contact.html">Contact</a></p>
-            </div>
+            <h2><a href="about.html">About</a></h2>
+
 
             <!-- CURATORIAL PROJECTS -->
             <h2>Curatorial Projects</h2>
