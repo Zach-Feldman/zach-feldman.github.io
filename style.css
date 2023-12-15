@@ -237,6 +237,8 @@ img{
 @media screen and (max-width: 768px) {
     .hamburger-menu {
         display: block; /* Show the hamburger icon in mobile view */
+        
+        z-index: 1000;
     }
 
     .sidebar {
@@ -249,7 +251,8 @@ img{
         /* Add other styles (background, padding, etc.) */
         transition: bottom 0.3s ease;
         
-        z-index: 1000;
+        overflow-y: scroll;
+        z-index: 900;
     }
 
     /* Adjust grid layout for mobile */
@@ -273,7 +276,7 @@ img{
         left: 0;
         right: 0;
         
-        z-index: 999;
+        z-index: 800;
     }
     
     /* Main */
@@ -281,6 +284,8 @@ img{
         grid-area: main;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        
+        z-index: 800;
     }
     
     .main-container{
@@ -300,6 +305,11 @@ img{
     #text-container{
         width: 100%;
         height: auto;
+    }
+    
+    /* Footer */
+    .footer{
+        z-index: 800;
     }
     
 }
