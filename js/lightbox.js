@@ -23,6 +23,8 @@ $(document).ready(function() {
         $('body').css('overflow', ''); // Enable scrolling again
     });
 
+
+    // Mobile touch
     $('.lightbox-trigger').on('click touchstart', function(e) {
         e.preventDefault();  // Prevent default action (like navigating to the image source)
         var src = $(this).attr('src');
@@ -39,9 +41,11 @@ $(document).ready(function() {
     });
 
     // Close lightbox when clicking/tapping anywhere in the lightbox
-    $('#lightbox').on('click touchstart', function(e) {
-        e.preventDefault();
-        $(this).fadeOut();
-        $('body').css('overflow', ''); // Enable scrolling again
-    });
+    // $('#lightbox').on('click touchstart', function(e) {
+    //     e.preventDefault();
+    //     $(this).fadeOut();
+    //     $('body').css('overflow', ''); // Enable scrolling again
+    // });
+
+
 });

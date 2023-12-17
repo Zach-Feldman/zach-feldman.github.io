@@ -205,6 +205,27 @@ img{
     margin-bottom: 15px;
 }
 
+.rectangle {
+    height: 500px;
+    width: 500px;
+    background: linear-gradient(-45deg, rgba(4,55,242,1) 0%, rgba(29,76,247,1) 50%, rgba(53,96,252,1) 100%);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
 
 /* Lightbox */
 #lightbox {
@@ -221,8 +242,8 @@ img{
 }
 
 #lightbox img {
-    max-width: 90%; /* Max width of the image */
-    max-height: 90vh; /* Max height of the image */
+    max-width: 100%; /* Max width of the image */
+    max-height: 100%; /* Max height of the image */
     height: auto; /* Maintain aspect ratio */
     width: auto; /* Maintain aspect ratio */
 }
@@ -232,10 +253,9 @@ img{
     top: 20px;
     right: 20px;
     font-size: 30px;
-    color: white;
+    color: #f6f8ff;
     cursor: pointer;
 }
-
 
 #text-container{
     width: 75%;
@@ -305,7 +325,7 @@ img{
     width: 25px; /* Width of the bar */
     height: 3px; /* Height of the bar */
     margin: 5px 0; /* Space between bars */
-    background-color: #000000; /* Color of the bar */
+    background-color: #f6f8ff; /* Color of the bar */
     transition: all 0.3s ease-in-out;
 }
 
@@ -416,7 +436,7 @@ img{
 
     #lightbox img {
         max-width: 100%; /* Max width of the image */
-        max-height: 90%; /* Max height of the image */
+        max-height: 100%; /* Max height of the image */
         height: auto; /* Maintain aspect ratio */
         width: auto; /* Maintain aspect ratio */
     }
