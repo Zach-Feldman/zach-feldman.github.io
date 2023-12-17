@@ -3,18 +3,29 @@
 /* lightbox.js for Zach Feldman */
 
 $(document).ready(function() {
-    // Function to detect touch devices
-    function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    // Function to detect a tap action
+    function isTapAction() {
+        return Math.abs(touchStartY - touchEndY) < 10; // Threshold for detecting a tap vs scroll
     }
 
-    // Open lightbox
-    $('.lightbox-trigger').on('click touchstart', function(e) {
-        e.preventDefault();
-        var src = $(this).attr('src');
-        $('#lightbox-image').attr('src', src);
-        $('#lightbox').fadeIn();
-        $('body').css('overflow', 'hidden');
+    // Handle touch start
+    $('.lightbox-trigger').on('touchstart', function(e) {
+        touchStartY = e.originalEvent.touches[0].clientY;
+    });
+
+    // Handle touch end
+    $('.lightbox-trigger').on('touchend', function(e) {
+        touchEndY = e.originalEvent.changedTouches[0].clientY;
+
+        if (isTapAction()) {
+            var src = $(this).attr('src');
+            $('#lightbox-image').attr('src', src);
+            $('#lightbox').fadeIn();
+            $('body').css('overflow', 'hidden');
+        }
     });
 
     // Close lightbox when 'X' is clicked/tapped
@@ -24,15 +35,13 @@ $(document).ready(function() {
         $('body').css('overflow', '');
     });
 
-    // If not a touch device, allow closing lightbox by clicking anywhere
-    if (!isTouchDevice()) {
-        $('#lightbox').on('click', function(e) {
-            if (e.target.id !== 'lightbox-image') {
-                $(this).fadeOut();
-                $('body').css('overflow', '');
-            }
-        });
-    }
+    // Close lightbox by clicking anywhere for non-touch devices
+    $('#lightbox').on('click', function(e) {
+        if (e.target.id !== 'lightbox-image') {
+            $(this).fadeOut();
+            $('body').css('overflow', '');
+        }
+    });
 
 
     // // Open lightbox
