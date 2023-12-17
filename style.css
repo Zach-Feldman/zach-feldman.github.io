@@ -8,8 +8,9 @@ html, body{
 }
 
 body{
-    background-color: #f0f8ff;
-    font-family: 'Montserrat';
+    background-color: #0437F2;
+    font-family: 'Lato', sans-serif;
+    color: #f6f8ff;
 }
 
 h1{
@@ -17,7 +18,7 @@ h1{
 }
 
 h2{
-    font-size: 12px;
+    font-size: 14px;
     margin: 25px 0px 25px 25px;
 }
 
@@ -27,24 +28,23 @@ p{
 }
 
 a:link {
-    color: black;
+    color: #f6f8ff;
     text-decoration: none;
 }
 
 a:visited{
-    color: black;
+    color: #f6f8ff;
     text-decoration: none;
 }
 
 a:hover{
-    color: red;
+    color: #f6f8ff;
     text-decoration: underline;
 }
 
 a:active{
-    color: red;
-    text-decoration: none;
-    font-weight: 700;
+    color: #f6f8ff;
+    text-decoration: underline;
 }
 
 img{
@@ -75,7 +75,7 @@ img{
 }
 
 .container > div {
-  background-color: #f0f8ff;
+  background-color: #0437F2;
   text-align: left;
   font-size: 12px;
 }
@@ -100,12 +100,11 @@ img{
 .sidebar-container{
     display: block;
     margin: 5px;
-    
     height: 100%;
     overflow-y: scroll;
     
     /*** SCROLLBAR ***/
-    scrollbar-color: black rgba(0, 0, 0, 0);
+    scrollbar-color: #2250fb rgba(0, 0, 0, 0);
     scrollbar-width: thin;
 
     /* Customizes the whole scrollbar */
@@ -131,18 +130,17 @@ img{
 
 #date{
     margin-bottom: 5px;
-    font-size: 12px;
-    
+    font-size: 14px;
     font-weight: 700;
 }
 
 #projects{
     margin: 5px 15px 35px 45px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 #projects p{
-    font-size: 12px;
+    font-size: 14px;
     margin: 10px 0 10px 0;
 }
 
@@ -151,12 +149,14 @@ img{
     margin-left: 25px;
     
     font-size: 9px;
-    color: lightgray;
+    color: #3560fc;
+    background-color: transparent;
 }
 
 /** sidebar.js **/
 .current-page {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    text-decoration: underline !important;
 }
 
 
@@ -177,14 +177,77 @@ img{
     line-height: 24px;
 }
 
-.main-container img{
+#title-container{
+    display: block;
+    padding-bottom: 25px;
     width: 75%;
-    height: auto;
 }
+
+#title-container h1{
+    margin-bottom: 25px;
+}
+
+#title-container p{
+    line-height: 20px;
+}
+
+#image-container{
+    display: block;
+    margin-top: 0px;
+    width: 75%;
+    margin-bottom: 25px;
+}
+
+#image-container p{
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+
+/* Lightbox */
+#lightbox {
+    position: fixed; /* Fixed position to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Semi-transparent background */
+    z-index: 2000; /* High z-index to be on top of other content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightbox img {
+    max-width: 90%; /* Max width of the image */
+    max-height: 90vh; /* Max height of the image */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Maintain aspect ratio */
+}
+
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
 
 #text-container{
     width: 75%;
     height: auto;
+}
+
+#text-container p{
+    margin-bottom: 25px;
+}
+
+#text-container a{
+    text-decoration: underline;
 }
 
 
@@ -192,6 +255,31 @@ img{
 .footer{
     grid-area: footer;
 }
+
+
+
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+
+
+
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+
+
+
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+
+
+
+/*********************************************************************************/
+/*********************************************************************************/
+/*********************************************************************************/
+
 
 
 /*********************************************************************************/
@@ -304,6 +392,7 @@ img{
         overflow-y: auto;
         -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
         
+        height: 100%;
         z-index: 800;
     }
     
@@ -319,6 +408,17 @@ img{
     .main-container img{
         width: 100%;
         height: auto;
+    }
+
+    #image-container{
+        width: 100%;
+    }
+
+    #lightbox img {
+        max-width: 100%; /* Max width of the image */
+        max-height: 90%; /* Max height of the image */
+        height: auto; /* Maintain aspect ratio */
+        width: auto; /* Maintain aspect ratio */
     }
 
     #text-container{

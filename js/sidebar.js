@@ -13,11 +13,11 @@ $(document).ready(function() {
             <h2>Curatorial Projects</h2>
             <div id="projects">
                 <div id="date">2023</div>
-                <p>Clocking Out: Time Beyond Management</p>
-                <p>The March of Time</p>
-                <p>When Linearity Stops</p>
-                <p>Mine and Yours: Forms of Distinction</p>
-                <p>Fluid Forms: Films by Philip Cartelli</p>
+                <p><a href="clocking-out-time-beyond-management.html">Clocking Out: Time Beyond Management</a></p>
+                <p><a href="march-of-time.html">The March of Time</a></p>
+                <p><a href="when-linearity-stops.html">When Linearity Stops</a></p>
+                <p><a href="mine-and-yours.html">Mine and Yours: Forms of Distinction</a></p>
+                <p><a href="fluid-forms.html">Fluid Forms: Films by Philip Cartelli</a></p>
             </div>
 
             <div id="projects">
@@ -117,34 +117,77 @@ $(document).ready(function() {
     $('.sidebar').html(sidebarHtml);
     
     
-    // Function to highlight the current page in the sidebar
-    function highlightCurrentPage() {
-        var currentPath = window.location.pathname.split("/").pop();
+    // // Function to highlight the current page in the sidebar
+    // function highlightCurrentPage() {
+    //     var currentPath = window.location.pathname.split("/").pop();
 
-        $('.sidebar a').each(function() {
-            var $this = $(this);
-            if ($this.attr('href') === currentPath) {
-                $this.addClass('current-page');
-            }
-        });
-    }
+    //     $('.sidebar a').each(function() {
+    //         var $this = $(this);
+    //         if ($this.attr('href') === currentPath) {
+    //             $this.addClass('current-page');
+    //         }
+    //     });
+    // }
 
-    // Call the function to highlight the current page
-    highlightCurrentPage();
+    // // Call the function to highlight the current page
+    // highlightCurrentPage();
     
     
-    // Toggle mobile menu
-    $('.hamburger-menu').click(function() {
-        $(this).toggleClass('active'); // Toggle the 'active' class for the hamburger menu
-        $('.sidebar').toggleClass('active'); // Toggle the 'active' class for the sidebar
-    });
+    // // Toggle mobile menu
+    // $('.hamburger-menu').click(function() {
+    //     $(this).toggleClass('active'); // Toggle the 'active' class for the hamburger menu
+    //     $('.sidebar').toggleClass('active'); // Toggle the 'active' class for the sidebar
+    // });
     
-    $('.hamburger-menu').on('click touchstart', function(e) {
-    e.preventDefault();  // Prevent default action (useful if it's an anchor tag)
-        $(this).toggleClass('active'); // Toggle the 'active' class for the hamburger menu
-        $('.sidebar').toggleClass('active'); // Toggle the 'active' class for the sidebar
-    });
+    // $('.hamburger-menu').on('click touchstart', function(e) {
+    //     e.preventDefault();  // Prevent default action (useful if it's an anchor tag)
+    //     $(this).toggleClass('active'); // Toggle the 'active' class for the hamburger menu
+    //     $('.sidebar').toggleClass('active'); // Toggle the 'active' class for the sidebar
+    // });
     
-     
+
+    // // Open lightbox
+    // $('.lightbox-trigger').click(function() {
+    //     var src = $(this).attr('src');
+    //     $('#lightbox-image').attr('src', src);
+    //     $('#lightbox').fadeIn();
+    //     $('body').css('overflow', 'hidden'); // Prevent scrolling
+    // });
+
+    // // Close lightbox
+    // $('#close-lightbox').click(function() {
+    //     $('#lightbox').fadeOut();
+    //     $('body').css('overflow', ''); // Enable scrolling again
+    // });
+
+    // // Close lightbox when clicking anywhere in the lightbox
+    // $('#lightbox').click(function() {
+    //     $(this).fadeOut();
+    //     $('body').css('overflow', ''); // Enable scrolling again
+    // });
+
+    // $('.lightbox-trigger').on('click touchstart', function(e) {
+    //     e.preventDefault();  // Prevent default action (like navigating to the image source)
+    //     var src = $(this).attr('src');
+    //     $('#lightbox-image').attr('src', src);
+    //     $('#lightbox').fadeIn();
+    //     $('body').css('overflow', 'hidden'); // Prevent scrolling
+    // });
+
+    // // Close lightbox
+    // $('#close-lightbox').on('click touchstart', function(e) {
+    //     e.preventDefault();
+    //     $('#lightbox').fadeOut();
+    //     $('body').css('overflow', ''); // Enable scrolling again
+    // });
+
+    // // Close lightbox when clicking/tapping anywhere in the lightbox
+    // $('#lightbox').on('click touchstart', function(e) {
+    //     e.preventDefault();
+    //     $(this).fadeOut();
+    //     $('body').css('overflow', ''); // Enable scrolling again
+    // });
+
+
 });
 
