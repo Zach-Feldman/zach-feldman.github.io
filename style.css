@@ -205,26 +205,51 @@ img{
     margin-bottom: 15px;
 }
 
-.rectangle {
-    height: 300px;
-    width: 300px;
-    background: linear-gradient(-45deg, rgba(4,55,242,1) 0%, rgba(29,76,247,1) 50%, rgba(53,96,252,1) 100%);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+
+/******************************************/
+/* General styling for the cube container */
+.cube-container{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 500px; /* Set a height for the container */
+    perspective: 500px;
+}
+.cube {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+/* Individual face styling */
+.cube .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(4, 55, 242, 0.8);
+    border: 1px solid #f6f8ff;
 }
 
+/* Position each face of the cube */
+.cube .front  { transform: translateZ(50px); }
+.cube .back   { transform: rotateY(180deg) translateZ(50px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(50px); }
+.cube .right  { transform: rotateY(90deg) translateZ(50px); }
+.cube .top    { transform: rotateX(90deg) translateZ(50px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* Keyframes for spinning animation */
+@keyframes spin {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+/******************************************/
 
 
 /* Lightbox */
