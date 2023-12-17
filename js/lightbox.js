@@ -43,9 +43,8 @@ $(document).ready(function() {
         }
     });
 
-
-    // Open lightbox
-    $('.lightbox-trigger').click(function() {
+    // Open lightbox on image click
+    $('.lightbox-trigger').on('click', function() {
         var src = $(this).attr('src');
         $('#lightbox-image').attr('src', src);
         $('#lightbox').fadeIn();
