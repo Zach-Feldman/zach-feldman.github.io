@@ -44,13 +44,13 @@ $(document).ready(function() {
     });
 
 
-    // // Open lightbox
-    // $('.lightbox-trigger').click(function() {
-    //     var src = $(this).attr('src');
-    //     $('#lightbox-image').attr('src', src);
-    //     $('#lightbox').fadeIn();
-    //     $('body').css('overflow', 'hidden'); // Prevent scrolling
-    // });
+    // Open lightbox
+    $('.lightbox-trigger').click(function() {
+        var src = $(this).attr('src');
+        $('#lightbox-image').attr('src', src);
+        $('#lightbox').fadeIn();
+        $('body').css('overflow', 'hidden'); // Prevent scrolling
+    });
 
     // // Close lightbox
     // $('#close-lightbox').click(function() {
