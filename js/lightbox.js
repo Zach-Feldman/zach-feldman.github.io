@@ -11,6 +11,14 @@ $(document).ready(function() {
         return Math.abs(touchStartY - touchEndY) < 10; // Threshold for detecting a tap vs scroll
     }
 
+    // Combined handler for opening lightbox
+    function openLightbox() {
+        var src = $(this).attr('src');
+        $('#lightbox-image').attr('src', src);
+        $('#lightbox').fadeIn();
+        $('body').css('overflow', 'hidden');
+    }
+
     // Handle touch start
     $('.lightbox-trigger').on('touchstart', function(e) {
         touchStartY = e.originalEvent.touches[0].clientY;
@@ -21,10 +29,15 @@ $(document).ready(function() {
         touchEndY = e.originalEvent.changedTouches[0].clientY;
 
         if (isTapAction()) {
-            var src = $(this).attr('src');
-            $('#lightbox-image').attr('src', src);
-            $('#lightbox').fadeIn();
-            $('body').css('overflow', 'hidden');
+            openLightbox.call(this); // Call the openLightbox function
+        }
+    });
+
+    // Open lightbox on image click for non-touch devices
+    $('.lightbox-trigger').on('click', function(e) {
+        // To prevent triggering both click and touchend on touch devices
+        if (!('ontouchstart' in window)) {
+            openLightbox.call(this);
         }
     });
 
@@ -35,57 +48,13 @@ $(document).ready(function() {
         $('body').css('overflow', '');
     });
 
-    // Close lightbox by clicking anywhere for non-touch devices
+    // Close lightbox by clicking anywhere outside the image
     $('#lightbox').on('click', function(e) {
         if (e.target.id !== 'lightbox-image') {
             $(this).fadeOut();
             $('body').css('overflow', '');
         }
     });
-
-    // Open lightbox on image click
-    $('.lightbox-trigger').on('click', function() {
-        var src = $(this).attr('src');
-        $('#lightbox-image').attr('src', src);
-        $('#lightbox').fadeIn();
-        $('body').css('overflow', 'hidden'); // Prevent scrolling
-    });
-
-    // // Close lightbox
-    // $('#close-lightbox').click(function() {
-    //     $('#lightbox').fadeOut();
-    //     $('body').css('overflow', ''); // Enable scrolling again
-    // });
-
-    // // Close lightbox when clicking anywhere in the lightbox
-    // $('#lightbox').click(function() {
-    //     $(this).fadeOut();
-    //     $('body').css('overflow', ''); // Enable scrolling again
-    // });
-
-
-    // // Mobile touch
-    // $('.lightbox-trigger').on('click touchstart', function(e) {
-    //     e.preventDefault();  // Prevent default action (like navigating to the image source)
-    //     var src = $(this).attr('src');
-    //     $('#lightbox-image').attr('src', src);
-    //     $('#lightbox').fadeIn();
-    //     $('body').css('overflow', 'hidden'); // Prevent scrolling
-    // });
-
-    // // Close lightbox
-    // $('#close-lightbox').on('click touchstart', function(e) {
-    //     e.preventDefault();
-    //     $('#lightbox').fadeOut();
-    //     $('body').css('overflow', ''); // Enable scrolling again
-    // });
-
-    // Close lightbox when clicking/tapping anywhere in the lightbox
-    // $('#lightbox').on('click touchstart', function(e) {
-    //     e.preventDefault();
-    //     $(this).fadeOut();
-    //     $('body').css('overflow', ''); // Enable scrolling again
-    // });
 
 
 });
