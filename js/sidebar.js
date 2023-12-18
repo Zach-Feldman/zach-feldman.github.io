@@ -22,31 +22,31 @@ $(document).ready(function() {
 
             <div id="projects">
                 <div id="date">2022</div>
-                <p>Art of Artifice: The Role of Documentary in Contemporary Art</p>
-                <p>Matthew Ritchie: A Garden in the Flood</p>
+                <p><a href="art-or-artifice.html">Art of Artifice: The Role of Documentary in Contemporary Art</a></p>
+                <p><a href="a-garden-in-the-flood.html">Matthew Ritchie: A Garden in the Flood</a></p>
             </div>
 
             <div id="projects">
                 <div id="date">2021</div>
-                <p>BioMedia: The Age of Media With Life-like Behavior</p>
-                <p>Nobody's Listening</p>
-                <p>BarabásiLab: Hidden Patterns</p>
+                <p><a href="biomedia.html">BioMedia: The Age of Media With Life-like Behavior</a></p>
+                <p><a href="nobodys-listening.html">Nobody's Listening</a></p>
+                <p><a href="barabasilab.html">BarabásiLab: Hidden Patterns</a></p>
             </div>
 
             <div id="projects">
                 <div id="date">2019</div>
-                <p>Serious Games: Documentary Art between Fact and Fiction</p>
-                <p>Rajiv Vaidya Memorial Lecture</p>
+                <p><a href="serious-games.html">Serious Games: Documentary Art between Fact and Fiction</a></p>
+                <p><a href="counter-investigations.html">Rajiv Vaidya Memorial Lecture - Forensic Architecture: Counter Investigations</a></p>
             </div>
 
             <div id="projects">
                 <div id="date">2017</div>
-                <p>International Lens</p>
+                <p><a href="international-lens.html">International Lens</a></p>
             </div>
 
             <div id="projects">
                 <div id="date">2014</div>
-                <p>Prison Creative Arts Project</p>
+                <p><a href="prison-creative-arts-project.html">Prison Creative Arts Project</a></p>
             </div>
 
 
