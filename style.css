@@ -17,7 +17,7 @@ html, body{
 
 body{
     background-color: #0437F2;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Avenir', sans-serif;
     color: #f6f8ff;
 }
 
@@ -207,7 +207,9 @@ img{
     scrollbar-width: thin; /* 'auto' or 'thin' */
     scrollbar-color: #f6f8ff #0437F2;
 
-    border: 1px #f6f8ff solid;
+    border-right: 1px #f6f8ff solid;
+    border-top: 1px #f6f8ff solid;
+    border-bottom: 1px #f6f8ff solid;
 }
 
 .main-container{
