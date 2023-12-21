@@ -59,6 +59,10 @@ a:active{
 img{
     width: 100%;
     height: auto;
+    
+    background-image: url('path/to/small-image.jpg'); /* Small placeholder image */
+    background-size: cover;
+    background-color: black;
 }
 
 
