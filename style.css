@@ -277,48 +277,68 @@ img{
 
 
 /******************************************/
-/* General styling for the cube container */
-.cube-container{
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
-    height: 500px; /* Set a height for the container */
-    perspective: 500px;
-}
-.cube {
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+.clock {
     position: relative;
-    width: 100px;
-    height: 100px;
-    transform-style: preserve-3d;
-    animation: spin 10s infinite linear;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 5px solid #0431d9;
+    margin: 50px;
 }
-
-/* Individual face styling */
-.cube .face {
+  
+.hour-hand, .minute-hand, .second-hand {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    background: rgba(4, 55, 242, 0.8);
-    border: 1px solid #f6f8ff;
+    background-color: #0431d9;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom center;
 }
 
-/* Position each face of the cube */
-.cube .front  { transform: translateZ(50px); }
-.cube .back   { transform: rotateY(180deg) translateZ(50px); }
-.cube .left   { transform: rotateY(-90deg) translateZ(50px); }
-.cube .right  { transform: rotateY(90deg) translateZ(50px); }
-.cube .top    { transform: rotateX(90deg) translateZ(50px); }
-.cube .bottom { transform: rotateX(-90deg) translateZ(50px); }
-
-/* Keyframes for spinning animation */
-@keyframes spin {
-    from {
-        transform: rotateX(0deg) rotateY(0deg);
-    }
-    to {
-        transform: rotateX(360deg) rotateY(360deg);
-    }
+.center-pin{
+    position: absolute;
+    background-color: #0431d9; /* or any color you prefer */
+    width: 45px; /* size of the center pin */
+    height: 45px; /* size of the center pin */
+    border-radius: 50%; /* makes it a circle */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centers the pin in the clock */
+    z-index: 10; /* ensures it's above the hands */
 }
+  
+.hour-hand {
+    width: 17.5px;
+    height: 125px;
+
+    z-index: 1;
+}
+  
+.minute-hand {
+    width: 12.5px;
+    height: 175px;
+
+    z-index: 2;
+}
+  
+.second-hand {
+    width: 7.5px;
+    height: 225px;
+    background-color: #0431d9;
+
+    z-index: 3;
+}
+
+
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
+/******************************************/
 /******************************************/
 
 
