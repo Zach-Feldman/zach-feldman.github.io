@@ -270,9 +270,13 @@ img{
     margin-bottom: 15px;
 }
 
+#book-cover{
+    width: 50%;
+}
+
 #pdf-container {
     position: relative;
-    width: 100%; /* Adjust as needed */
+    width: 75%; /* Adjust as needed */
     height: auto;
     margin-bottom: 25px;
 }
@@ -281,6 +285,16 @@ img{
     border: none;
     width: 100%;
     height: 950px;
+}
+
+iframe{
+    width: 100%;
+    height: 700px;
+}
+
+.BRpagecontainer img{
+    width: 100%;
+    height: auto;
 }
 
 
@@ -595,6 +609,10 @@ img{
         width: 100%;
     }
 
+    #book-cover{
+        width: 100%;
+    }
+
     #lightbox img {
         max-width: 100%; /* Max width of the image */
         max-height: 100%; /* Max height of the image */
@@ -603,6 +621,21 @@ img{
     }
 
     #text-container{
+        width: 100%;
+        height: auto;
+    }
+
+    #pdf-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    iframe{
+        width: 100%;
+        height: 200px;
+    }
+    
+    .BRpagecontainer img{
         width: 100%;
         height: auto;
     }
