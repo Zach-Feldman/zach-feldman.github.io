@@ -1,6 +1,14 @@
 /*** CSS for Zach Feldman ***/
 
 /*** BASICS ***/
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html, body{
     margin: 0px;
     padding: 0px;
@@ -60,9 +68,9 @@ img{
     width: 100%;
     height: auto;
     
-    background-image: url('path/to/small-image.jpg'); /* Small placeholder image */
+    background-image: url('img/lazy-load_01.png'); /* Small placeholder image */
     background-size: cover;
-    background-color: black;
+    background-color: #0431d9;
 }
 
 
@@ -198,12 +206,12 @@ img{
     scrollbar-width: thin; /* 'auto' or 'thin' */
     scrollbar-color: #f6f8ff #0437F2;
 
-    border-right: 1px #f6f8ff solid;
+    border: 1px #f6f8ff solid;
 }
 
 .main-container{
     display: block;
-    margin: 25px 10% 100px 10%; /*25px 10% 100px 10%*/
+    margin: 35px 10% 100px 10%; /*25px 10% 100px 10%*/
 }
 
 .main-container p{
@@ -504,12 +512,12 @@ img{
         top: 0;
         height: 100%;
         width: 100%; /* Adjust width as needed :: 250px*/
-        background-color: yellow; /* Example background color */
         transition: left 0.3s ease;
         z-index: 900; /* Below the hamburger menu */
         overflow-y: auto; /* Enable scrolling */
 
-        border: none;
+        border: 1px #f6f8ff solid;
+
     }
 
     .sidebar.active {
@@ -550,6 +558,8 @@ img{
 
         border-right: 1px #f6f8ff solid;
         border-left: 1px #f6f8ff solid;
+        border-top: 1px #f6f8ff solid;
+        border-bottom: 1px #f6f8ff solid;
     }
     
     .main-container{
@@ -573,6 +583,12 @@ img{
     #title-container{
         width: 100%;
         height: auto;
+
+        padding-bottom: 0;
+    }
+
+    #title-container h1{
+        margin: 0;
     }
 
     #image-container{
