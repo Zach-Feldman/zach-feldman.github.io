@@ -20,7 +20,7 @@ $(document).ready(function() {
         
         
             <!-- CURATORIAL PROJECTS -->
-            <h2 class="dropdown-toggle">Curatorial Projects</h2>
+            <h2 id="curatorialProjectsDropdown" class="dropdown-toggle">Curatorial Projects</h2>
                 <div class="dropdown-content">
                     <div id="projects">
                         <div id="date">2023</div>
@@ -82,7 +82,7 @@ $(document).ready(function() {
             
             
             <!-- PUBLICATIONS -->
-            <h2 class="dropdown-toggle">Publications</h2>
+            <h2 id="publicationsDropdown" class="dropdown-toggle">Publications</h2>
                 <div class="dropdown-content">
                     <div id="projects">
                         <div id="date">2023</div>
