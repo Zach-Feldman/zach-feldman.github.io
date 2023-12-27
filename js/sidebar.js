@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* sidebar.js for Zach Feldman */
+/* sidebar.js for Zachary B. Feldman */
 
 $(document).ready(function() {
     // Get the current URL path
@@ -16,7 +16,13 @@ $(document).ready(function() {
     const sidebarHtml = `
         <div class="sidebar-container">
             <!-- ABOUT -->
-            <h2><a href="${relativePath}curatorial/about.html">About</a></h2>
+            <h2 id="aboutDropdown" class="dropdown-toggle">About</h2>
+                <div class="dropdown-content">
+                    <div id="projects">
+                        <p><a href="${relativePath}curatorial/bio.html">Bio</a></p>
+                        <p><a href="${relativePath}curatorial/contact.html">Contact</a></p>
+                    </div>
+                </div>
         
         
             <!-- CURATORIAL PROJECTS -->

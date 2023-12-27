@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* lightbox.js for Zach Feldman */
+/* lightbox.js for Zachary B. Feldman */
 
 $(document).ready(function() {
     let touchStartY = 0;

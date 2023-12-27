@@ -1,4 +1,4 @@
-/*** CSS for Zach Feldman ***/
+/*** CSS for Zachary B. Feldman ***/
 
 /*** BASICS ***/
 *,
@@ -112,7 +112,7 @@ img{
 }
 
 .header-container{
-    margin: 25px;
+    margin: 15px 25px auto 30px;
 }
 
 
@@ -181,7 +181,6 @@ img{
 
 .dropdown-content {
     display: none;
-    /* Add additional styling as needed */
 }
 
 /* Style when dropdown is active */
@@ -214,7 +213,7 @@ img{
 
 .main-container{
     display: block;
-    margin: 35px 10% 100px 10%; /*25px 10% 100px 10%*/
+    margin: 30px 10% 50px 100px; /*25px 10% 100px 10%*/
 }
 
 .main-container p{
@@ -253,6 +252,7 @@ img{
 
 #title-container h1{
     margin-bottom: 25px;
+    margin-top: 0;
 }
 
 #title-container p{
@@ -299,6 +299,125 @@ iframe{
     width: 100%;
     height: auto;
 }
+
+.fa {
+    width: 100px;
+    height: auto;
+    padding: 0px;
+    font-size: 100px;
+    width: 50px;
+    text-align: left;
+    text-decoration: none !important;
+  }
+  
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-instagram {
+    color: #f6f8ff;
+}
+
+/*** Contact Form ***/
+form {
+    background-color: transparent;
+    display: block;
+    width: 75%;
+    height: auto;
+
+    text-align: left;
+}
+
+fieldset {
+    padding: 0px;
+    border: none;
+}
+
+input, textarea, button {
+    width: 100%;
+}
+
+input {
+    background-color: #f6f8ff;
+    border-radius: 2px;
+    border: none;
+}
+
+input:hover {
+    background-color: #d9dae0;
+}
+
+input:focus {
+    background-color: #f6f8ff;
+}
+
+textarea {
+    overflow:auto;
+    resize:none;
+    width: 100%;
+    height:auto;
+    background-color: #f6f8ff;
+    border: none;
+    border-radius: 2px;
+
+    scrollbar-width: thin; /* 'auto' or 'thin' */
+    scrollbar-color: #f6f8ff #0437F2;
+}
+
+textarea:hover {
+    background-color: #d9dae0;
+}
+
+textarea:focus {
+    background-color: #f6f8ff;
+}
+
+/* For WebKit (Chrome, Edge, Safari) */
+textarea::-webkit-scrollbar {
+    width: 3px; /* Width of the scrollbar */
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #0437F2; /* Track color */
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #f6f8ff; /* Handle color */
+}
+
+/* Scrollbar changes on hover */
+textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #9a9b9f; /* Darker color on hover */
+    width: 3px; /* Make it thicker on hover */
+}
+
+label{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#name, #email, #subject, #message{
+    font-family: 'Avenir', sans-serif;
+    font-size: 14px;
+}
+
+button{
+    height: 3em;
+    font-family: 'Avenir', sans-serif;
+    font-size: 14px;
+    color: #f6f8ff;
+    background-color: transparent;
+    border: 1px solid #f6f8ff;
+    border-radius: 2px;
+}
+
+button:hover{
+    background-color: #022194;
+    color: white;
+    cursor: pointer;
+    border: 2px solid #f6f8ff;
+}
+
 
 /******************************************/
 /******************************************/
@@ -501,7 +620,7 @@ iframe{
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) { /* max-width: 768px */
     .hamburger-menu {
         display: block; /* Show the hamburger icon in mobile view */
 
@@ -549,6 +668,10 @@ iframe{
         z-index: 900;
 
         border: 1px #f6f8ff solid;
+    }
+
+    .header-container{
+        margin: 25px;
     }
     
     /* Main */
@@ -628,6 +751,16 @@ iframe{
     .BRpagecontainer img{
         width: 100%;
         height: auto;
+    }
+
+    /*** Contact Form ***/
+    form{
+        width: 100%;
+        height: auto;
+    }
+
+    textarea{
+        height: 10em;
     }
     
     /* Footer */

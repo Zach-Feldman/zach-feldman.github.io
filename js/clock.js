@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* clock.js for Zach Feldman */
+/* clock.js for Zachary B. Feldman */
 
 $(document).ready(function() {
   function getEasternTime() {

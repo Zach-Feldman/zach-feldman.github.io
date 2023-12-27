@@ -1,0 +1,151 @@
+<!-- HTML for Contact -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>ZF - Contact</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <link rel="icon" href="favicon.png">
+    <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- HAMBURGER -->
+        <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        
+        
+        <!-- HEADER -->
+        <div class="header">
+            <div class="header-container">
+                <h1><a href="../index.html">Zachary B. Feldman</a></h1>
+            </div>
+        </div>
+        
+        
+        <!-- SIDEBAR -->
+        <div class="sidebar"></div>
+
+        
+        <!-- MAIN -->
+        <div class="main">
+            <div class="main-container">
+                <h1>Contact</h1>
+
+                <!-- Contact Form -->
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <fieldset>
+                        <input type="hidden" name="access_key" value="958269d7-daa7-4caa-8180-4cb40f880fa6">
+                        
+                        <!-- Full Name -->
+                        <div>
+                            <label for="name">Full Name</label>
+                            <br>
+                            <input 
+                                type="text" 
+                                name="name" 
+                                id="name"
+                                placeholder=""
+                                required
+                                />
+                        </div>
+                        <br>
+                        <br>
+
+                        <!-- Email Address -->
+                        <div>
+                            <label for="email">Email Address</label>
+                            <br>
+                            <input 
+                                type="email" 
+                                name="email"
+                                id="email"
+                                placeholder=""
+                                required
+                            />
+                        </div>
+                        <br>
+                        <br>
+
+                        <!-- Subject Line -->
+                        <div>
+                            <label for="subject">Subject</label>
+                            <br>
+                            <input 
+                                type="text" 
+                                name="subject"
+                                id="subject"
+                                placeholder=""
+                            />
+                        </div>
+                        <br>
+                        <br>
+
+                        <!-- Message Box -->
+                        <div>
+                            <label for="message">Message</label>
+                            <br>
+                            <textarea 
+                                rows="20"
+                                name="message" 
+                                id="message"
+                                placeholder=""
+                                required>
+                            </textarea>
+                        </div>
+                        <br>
+                        <br>
+
+                        <button type="submit">Submit Form</button>
+
+                        <!-- Redirect to thank you page to custom URL -->
+                        <input type="hidden" name="redirect" value="https://zach-feldman.github.io/"/>
+
+                        <!-- User key -->
+                        <input type="hidden" name="apikey" value="958269d7-daa7-4caa-8180-4cb40f880fa6"/>
+
+                        <!-- Honeypot check -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;"/>
+                    </fieldset>
+                </form>
+                  
+            </div>
+        </div>
+        
+        
+        <!-- FOOTER -->
+        <div class="footer">
+            <!-- Credits -->
+            <div id="credit">
+                <!-- <p>Created by MRD</p> -->
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- LOAD JS SCRIPTS -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/highlight-current-page.js"></script>
+    <script src="../js/mobile-menu.js"></script>
+    <script src="../js/lightbox.js"></script>
+    <script src="../js/scrollbar-position.js"></script>
+    <script src="../js/dropdown-menu.js"></script>   
+    
+</body>
+</html>

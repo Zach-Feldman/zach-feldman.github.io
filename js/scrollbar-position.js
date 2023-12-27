@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* scrollbar-position.js for Zach Feldman */
+/* scrollbar-position.js for Zachary B. Feldman */
 
 $(document).ready(function() {
 

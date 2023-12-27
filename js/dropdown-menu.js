@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* dropdown-menu.js for Zach Feldman */
+/* dropdown-menu.js for Zachary B. Feldman */
 
 $(document).ready(function() {
 

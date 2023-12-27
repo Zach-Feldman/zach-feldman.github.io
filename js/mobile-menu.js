@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* mobile-menu.js for Zach Feldman */
+/* mobile-menu.js for Zachary B. Feldman */
 
 $(document).ready(function() {
     $(document).ready(function() {

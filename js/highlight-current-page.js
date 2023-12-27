@@ -1,6 +1,6 @@
 /*eslint-env es6*/
 
-/* highlight-current-page.js for Zach Feldman */
+/* highlight-current-page.js for Zachary B. Feldman */
 
 $(document).ready(function() {
     const currentPath = window.location.pathname.split('/').filter(Boolean).pop();
