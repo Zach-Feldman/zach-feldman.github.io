@@ -89,6 +89,7 @@ img{
     word-wrap: break-word;
     width: 100vw;
     height: 100vh;
+    height: 100dvh; 
 }
 
 .container > div {
@@ -128,7 +129,8 @@ img{
     border-top: #f6f8ff 0.5px solid;
     border-bottom: #f6f8ff 0.5px solid;
 
-    max-height: 100vh; /* Height of the viewport */
+    max-height: 100vh; 
+    max-height: 100dvh; 
     overflow-y: auto;
 }
 
@@ -200,6 +202,7 @@ img{
 .main{
     grid-area: main;
     height: 100vh;
+    height: 100dvh; 
     overflow-y: auto;
 
     /*** SCROLLBAR ***/
@@ -279,8 +282,10 @@ img{
 
 #pdf-container {
     position: relative;
-    width: 75%; /* Adjust as needed */
-    height: auto;
+    width: 100%;
+    height: 750px;
+    background: url('/img/lazy-load_01.png') no-repeat center center;
+    background-size: cover; /* Cover the entire container */
     margin-bottom: 25px;
 }
 
@@ -441,63 +446,12 @@ button:hover{
 /******************************************/
 /******************************************/
 /******************************************/
-/******************************************/
-/******************************************/
-/******************************************/
-.clock {
+.stand-in {
     position: relative;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 5px solid #0431d9;
-    margin: 50px;
+    width: 100%;
+    height: 75dvh;
+    background-color: #0431d9;;
 }
-  
-.hour-hand, .minute-hand, .second-hand {
-    position: absolute;
-    background-color: #0431d9;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: bottom center;
-}
-
-.center-pin{
-    position: absolute;
-    background-color: #0431d9; /* or any color you prefer */
-    width: 45px; /* size of the center pin */
-    height: 45px; /* size of the center pin */
-    border-radius: 50%; /* makes it a circle */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* centers the pin in the clock */
-    z-index: 10; /* ensures it's above the hands */
-}
-  
-.hour-hand {
-    width: 17.5px;
-    height: 125px;
-
-    z-index: 1;
-}
-  
-.minute-hand {
-    width: 12.5px;
-    height: 175px;
-
-    z-index: 2;
-}
-  
-.second-hand {
-    width: 7.5px;
-    height: 225px;
-    background-color: #0431d9;
-
-    z-index: 3;
-}
-
-/******************************************/
-/******************************************/
-/******************************************/
 /******************************************/
 /******************************************/
 /******************************************/
@@ -674,7 +628,8 @@ button:hover{
             "main";
         grid-template-columns: 1fr;
         grid-template-rows: 80px auto;
-        height: 100vh; /* Full viewport height */
+        height: 100vh; 
+        height: 100dvh; 
     }
     
     /* Header */
@@ -755,16 +710,6 @@ button:hover{
     #text-container{
         width: 100%;
         height: auto;
-    }
-
-    #pdf-container {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    iframe{
-        width: 100%;
-        height: 200px;
     }
     
     .BRpagecontainer img{
