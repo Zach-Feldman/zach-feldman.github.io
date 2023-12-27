@@ -44,7 +44,7 @@
                 <h1>Contact</h1>
 
                 <!-- Contact Form -->
-                <form action="https://api.web3forms.com/submit" method="POST">
+                <form action="https://api.web3forms.com/submit" method="POST" id="form">
                     <fieldset>
                         <input type="hidden" name="access_key" value="958269d7-daa7-4caa-8180-4cb40f880fa6">
                         
@@ -103,8 +103,11 @@
 
                         <button type="submit">Submit Form</button>
 
+                        <!-- Result redirect with js instead of custom URL -->
+                        <div id="result"></div>
+
                         <!-- Redirect to thank you page to custom URL -->
-                        <input type="hidden" name="redirect" value="https://zach-feldman.github.io/"/>
+                        <!-- <input type="hidden" name="redirect" value="https://zach-feldman.github.io/about/contact-sent"/> -->
 
                         <!-- User key -->
                         <input type="hidden" name="apikey" value="958269d7-daa7-4caa-8180-4cb40f880fa6"/>
@@ -139,7 +142,8 @@
     <script src="../js/mobile-menu.js"></script>
     <script src="../js/lightbox.js"></script>
     <script src="../js/scrollbar-position.js"></script>
-    <script src="../js/dropdown-menu.js"></script>   
+    <script src="../js/dropdown-menu.js"></script>
+    <script src="../js/redirect.js"></script>
     
 </body>
 </html>

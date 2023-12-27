@@ -19,8 +19,8 @@ $(document).ready(function() {
             <h2 id="aboutDropdown" class="dropdown-toggle">About</h2>
                 <div class="dropdown-content">
                     <div id="projects">
-                        <p><a href="${relativePath}curatorial/bio.html">Bio</a></p>
-                        <p><a href="${relativePath}curatorial/contact.html">Contact</a></p>
+                        <p><a href="${relativePath}about/bio.html">Bio</a></p>
+                        <p><a href="${relativePath}about/contact.html">Contact</a></p>
                     </div>
                 </div>
         

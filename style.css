@@ -418,6 +418,25 @@ button:hover{
     border: 2px solid #f6f8ff;
 }
 
+/* Result message */
+.result-message {
+    color: #28a745; /* Success color, change as needed */
+    background-color: #dff0d8; /* Light background, change as needed */
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.2em; /* Larger text */
+}
+
+.result-message.error {
+    color: #dc3545; /* Error color */
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
 
 /******************************************/
 /******************************************/
