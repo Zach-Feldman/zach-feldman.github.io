@@ -60,20 +60,19 @@
 
 
                 <!-- PDF Viewer-->
-                <div id="pdf-container">
-                    <div id="adobe-dc-view"></div>
-                    <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
-                    <script type="text/javascript">
-                        document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
-                            var adobeDCView = new AdobeDC.View({clientId: "f369422796ae4233b22ddfb7b6fe7255", divId: "adobe-dc-view"});
+                <div id="adobe-dc-view"></div>
+                <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+                <script type="text/javascript">
+                    document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                        var adobeDCView = new AdobeDC.View({clientId: "f369422796ae4233b22ddfb7b6fe7255", divId: "adobe-dc-view"});
 
-                            adobeDCView.previewFile({
-                                content:{location: { url: "https://zach-feldman.github.io/pdfs/genetics-and-ethics.pdf"}},
-                                metaData:{fileName: "genetics-and-ethics.pdf"}
-                            }, {embedMode: "SIZED_CONTAINER"});
-                        });
-                    </script>
-                </div>
+                        adobeDCView.previewFile({
+                            content:{location: { url: "https://zach-feldman.github.io/pdfs/genetics-and-ethics.pdf"}},
+                            metaData:{fileName: "genetics-and-ethics.pdf"}
+                        }, {embedMode: "SIZED_CONTAINER"});
+                    });
+                </script>
+
 
                 <br>
                 

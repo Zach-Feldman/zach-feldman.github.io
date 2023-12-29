@@ -311,7 +311,9 @@ img{
 
 #adobe-dc-view {
     width: 100%;
-    height: 748px;
+    height: 800px;
+    background: url('/img/lazy-load_01.png') no-repeat center center;
+    border: 1px solid #f6f8ff;
 }
 
 
@@ -771,7 +773,7 @@ button:hover{
         position: relative;
         box-sizing: border-box;
         width: 100%;
-        height: 550px;
+        height: 600px;
         background: url('/img/lazy-load_01.png') no-repeat center center;
         background-size: cover; /* Cover the entire container */
         margin-bottom: 25px;
@@ -781,7 +783,9 @@ button:hover{
 
     #adobe-dc-view {
         width: 100%;
-        height: 548px;
+        height: 400px;
+        background: url('/img/lazy-load_01.png') no-repeat center center;
+        border: 1px solid #f6f8ff;
     }
 
     #lightbox img {
