@@ -309,6 +309,12 @@ img{
     border: 1px solid #f6f8ff;
 }
 
+#adobe-dc-view {
+    width: 100%;
+    height: 748px;
+}
+
+
 /************************/
 /************************/
 
@@ -759,6 +765,23 @@ button:hover{
 
     #book-cover{
         width: 100%;
+    }
+
+    #pdf-container {
+        position: relative;
+        box-sizing: border-box;
+        width: 100%;
+        height: 550px;
+        background: url('/img/lazy-load_01.png') no-repeat center center;
+        background-size: cover; /* Cover the entire container */
+        margin-bottom: 25px;
+    
+        border: 1px solid #f6f8ff;
+    }
+
+    #adobe-dc-view {
+        width: 100%;
+        height: 548px;
     }
 
     #lightbox img {
