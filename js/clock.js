@@ -1,50 +1,56 @@
-/*eslint-env es6*/
-
-/* clock.js for Zachary B. Feldman */
-
 $(document).ready(function() {
-  function getEasternTime() {
-    var now = new Date();
-    var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-
-    // Eastern Time offset
-    var easternOffset = -5.0;
-    if (isDaylightSaving(now)) {
-      easternOffset = -4.0; // EDT offset
-    }
-
-    return new Date(utc + (3600000 * easternOffset));
-  }
-
-  function isDaylightSaving(date) {
-    var year = date.getFullYear();
-    var secondSundayInMarch = new Date(year, 2, 1);
-    var firstSundayInNovember = new Date(year, 10, 1);
-
-    // Get the day for the second Sunday in March
-    secondSundayInMarch.setDate(8 - secondSundayInMarch.getDay());
-
-    // Get the day for the first Sunday in November
-    firstSundayInNovember.setDate(1 + (7 - firstSundayInNovember.getDay()));
-
-    return date >= secondSundayInMarch && date < firstSundayInNovember;
-  }
-
+  // Update Clock
   function updateClock() {
-    var now = getEasternTime();
-    var seconds = now.getSeconds();
-    var minutes = now.getMinutes();
-    var hours = now.getHours();
+      var now = new Date();
+      var secondHand = $(".second.hand");
+      var minuteHand = $(".minute.hand");
+      var hourHand = $(".hour.hand");
 
-    var secondsDegrees = ((seconds / 60) * 360) + 90;
-    var minutesDegrees = ((minutes / 60) * 360) + ((seconds/60)*6) + 90;
-    var hoursDegrees = ((hours / 12) * 360) + ((minutes/60)*30) + 90;
+      var seconds = now.getSeconds();
+      var minutes = now.getMinutes();
+      var hours = now.getHours();
 
-    $('.second-hand').css('transform', `rotate(${secondsDegrees}deg)`);
-    $('.minute-hand').css('transform', `rotate(${minutesDegrees}deg)`);
-    $('.hour-hand').css('transform', `rotate(${hoursDegrees}deg)`);
+      var secondDegrees = ((seconds / 60) * 360);
+      var minuteDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6);
+      var hourDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30);
+
+      secondHand.css("transform", `rotate(${secondDegrees}deg)`);
+      minuteHand.css("transform", `rotate(${minuteDegrees}deg)`);
+      hourHand.css("transform", `rotate(${hourDegrees}deg)`);
+
+      console.log(now);
   }
-  
+
+  // Generate indicators
+  var totalIndicators = 60;
+  var clockRadius = $('.clock').width() / 2; // Assuming the clock is a circle
+  var minorIndicatorLength = 10; // Fixed length for minor indicators
+  var majorIndicatorLength = 15; // Longer length for major indicators
+
+  for (var i = 0; i < totalIndicators; i++) {
+      var indicator = $('<div class="clock-indicator"></div>');
+      var rotationDegree = (360 / totalIndicators) * i;
+      var isMajorIndicator = (i % 5 === 0);
+      var indicatorLength = isMajorIndicator ? majorIndicatorLength : minorIndicatorLength;
+
+      indicator.css({
+          'transform': 'rotate(' + rotationDegree + 'deg) translateY(' + clockRadius + 'px)',
+          'transform-origin': 'bottom center',
+          'position': 'absolute',
+          'bottom': '50%',
+          'left': '50%',
+          'height': indicatorLength + 'px',
+          'width': isMajorIndicator ? '3px' : '2px',
+      });
+
+      if (isMajorIndicator) {
+          indicator.addClass('major-indicator');
+      }
+
+      $('.clock').append(indicator);
+  }
+
+  // Call updateClock()
   setInterval(updateClock, 1000);
-  updateClock(); // Initialize clock on load
+  updateClock(); // Initialize clock on page load
 });

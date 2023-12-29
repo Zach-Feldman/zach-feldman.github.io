@@ -204,6 +204,7 @@ img{
     height: 100vh;
     height: 100dvh; 
     overflow-y: auto;
+    overflow-x: hidden;
 
     /*** SCROLLBAR ***/
     scrollbar-width: thin; /* 'auto' or 'thin' */
@@ -453,12 +454,83 @@ button:hover{
 /******************************************/
 /******************************************/
 /******************************************/
-.stand-in {
+:root { 
+    --red: #0326a7;
+    --green: #0326a7;
+    --blue: #0326a7;
+}
+
+.clock-container {
+    display: block;
     position: relative;
     width: 100%;
-    height: 75dvh;
-    background-color: #0431d9;;
+    height: 700px;
 }
+
+.clock {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 0 auto;
+    transform: rotate(180deg) translate(50%, 50%); /* Adjust position */
+    top: 55%;
+    left: 50%;
+}
+
+.second { 
+    --width: 2px;
+    --height: 230px;
+    --color: var(--red);
+}
+
+.minute { 
+    --width: 3px;
+    --height: 180px;
+    --color: var(--green);
+}
+
+.hour { 
+    --width: 3px;
+    --height: 120px;
+    --color: var(--blue);
+}
+
+.hand {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - var(--width) / 2);
+    width: var(--width);
+    height: var(--height);
+    background-color: var(--color);
+    transform-origin: center 0;
+    /*border-radius: calc(var(--width) / 2);*/
+    z-index: 2;
+}
+
+.clock-indicator {
+    background-color: #032cc0; /* Indicator color */
+    border-radius: 1px;
+}
+
+.major-indicator {
+    background-color: #032cc0; /* Different color for major indicators */
+}
+
+.clock-axis {
+    background: #032cc0;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
 /******************************************/
 /******************************************/
 /******************************************/
@@ -722,6 +794,45 @@ button:hover{
     .BRpagecontainer img{
         width: 100%;
         height: auto;
+    }
+
+    .clock-container {
+        width: 100%;
+        height: 100dvh;
+    }
+
+    .clock {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        margin: 0 auto;
+        transform: rotate(180deg) translate(50%, 50%); /* Adjust position */
+        top: 300px;
+        left: 50%;
+    }
+
+    .second { 
+        --width: 2px;
+        --height: 100px;
+        --color: var(--red);
+    }
+    
+    .minute { 
+        --width: 3px;
+        --height: 90px;
+        --color: var(--green);
+    }
+    
+    .hour { 
+        --width: 3px;
+        --height: 60px;
+        --color: var(--blue);
+    }
+
+    .clock-axis {
+        width: 15px;
+        height: 15px;
     }
 
     /*** Contact Form ***/
