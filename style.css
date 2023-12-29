@@ -277,10 +277,26 @@ img{
     margin-bottom: 15px;
 }
 
+#text-container{
+    width: 75%;
+    height: auto;
+}
+
+#text-container p{
+    margin-bottom: 25px;
+}
+
+#text-container a{
+    text-decoration: underline;
+}
+
 #book-cover{
     width: 50%;
 }
 
+/************************/
+/****** PDF VIEWER ******/
+/************************/
 #pdf-container {
     position: relative;
     box-sizing: border-box;
@@ -294,44 +310,15 @@ img{
 }
 
 #pdf-container embed {
+    width: 100%;
     height: 748px;
 }
+/************************/
+/************************/
 
-.fp-iframe{
-    border: none;
-    width: 100%;
-    height: 950px;
-}
-
-iframe{
-    width: 100%;
-    height: 700px;
-}
-
-.BRpagecontainer img{
-    width: 100%;
-    height: auto;
-}
-
-.fa {
-    width: 100px;
-    height: auto;
-    padding: 0px;
-    font-size: 100px;
-    width: 50px;
-    text-align: left;
-    text-decoration: none !important;
-  }
-  
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-instagram {
-    color: #f6f8ff;
-}
-
-/*** Contact Form ***/
+/****************************/
+/******* CONTACT FORM *******/
+/****************************/
 form {
     background-color: transparent;
     display: block;
@@ -449,11 +436,12 @@ button:hover{
     background-color: #f8d7da;
     border-color: #f5c6cb;
 }
+/****************************/
+/****************************/
 
-
-/******************************************/
-/******************************************/
-/******************************************/
+/***************************/
+/********** CLOCK **********/
+/***************************/
 :root { 
     --red: #0326a7;
     --green: #0326a7;
@@ -528,14 +516,12 @@ button:hover{
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
-
-/******************************************/
 /******************************************/
 /******************************************/
 
-/* Lightbox */
+/************************/
+/******* LIGHTBOX *******/
+/************************/
 #lightbox {
     position: fixed; /* Fixed position to cover the whole viewport */
     top: 0;
@@ -564,20 +550,31 @@ button:hover{
     color: #f6f8ff;
     cursor: pointer;
 }
+/************************/
+/************************/
 
-#text-container{
-    width: 75%;
+/************************/
+/***** SOCIAL ICONS *****/
+/************************/
+.fa {
+    width: 100px;
     height: auto;
+    padding: 0px;
+    font-size: 100px;
+    width: 50px;
+    text-align: left;
+    text-decoration: none !important;
+  }
+  
+.fa:hover {
+    opacity: 0.7;
 }
 
-#text-container p{
-    margin-bottom: 25px;
+.fa-instagram {
+    color: #f6f8ff;
 }
-
-#text-container a{
-    text-decoration: underline;
-}
-
+/************************/
+/************************/
 
 /*** FOOTER ***/
 .footer{
@@ -619,9 +616,9 @@ button:hover{
 /*********************************************************************************/
 /*********************************************************************************/
 
-
-/*** MOBILE ***/
-/* Hamburger Menu Icon */
+/********************/
+/****** MOBILE ******/
+/********************/
 .hamburger-menu {
     display: none; /* Show the hamburger menu */
     position: fixed; /* Fixed position */
@@ -629,7 +626,6 @@ button:hover{
     right: 20px; /* Adjust as needed for horizontal alignment */
     z-index: 1000; /* Ensure it's above other content */
     cursor: pointer;
-    
     background-color: transparent !important;
 }
 
@@ -654,28 +650,22 @@ button:hover{
     width: 15px; /* Shortest line */
 }
 
-/* Styles when the menu is active */
-/* Rotate first bar */
 .hamburger-menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
 
-/* Hide middle bar */
 .hamburger-menu.active span:nth-child(2) {
     opacity: 0;
 }
 
-/* Rotate third bar */
 .hamburger-menu.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
     width: 35px;
 }
 
-/* Mobile Styles */
-@media screen and (max-width: 1080px) { /* max-width: 768px */
+@media screen and (max-width: 1080px) {
     .hamburger-menu {
-        display: block; /* Show the hamburger icon in mobile view */
-
+        display: block;
         background-color: transparent !important;
         z-index: 1000;
     }
@@ -686,13 +676,11 @@ button:hover{
         left: -100%; /* Start off-screen to the left */
         top: 0;
         height: 100%;
-        width: 100%; /* Adjust width as needed :: 250px*/
+        width: 100%; /* Adjust width as needed */
         transition: left 0.3s ease;
         z-index: 900; /* Below the hamburger menu */
         overflow-y: auto; /* Enable scrolling */
-
         border: 1px #f6f8ff solid;
-
     }
 
     .sidebar.active {
@@ -731,11 +719,9 @@ button:hover{
     .main{
         grid-area: main;
         overflow-y: auto;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-        
+        -webkit-overflow-scrolling: touch;
         height: 100%;
         z-index: 800;
-
         border-right: 1px #f6f8ff solid;
         border-left: 1px #f6f8ff solid;
         border-top: 1px #f6f8ff solid;
@@ -791,9 +777,18 @@ button:hover{
         height: auto;
     }
     
-    .BRpagecontainer img{
+    #book-cover{
+        width: 50%;
+    }
+
+    #pdf-container {
         width: 100%;
-        height: auto;
+        height: 500px;
+    }
+    
+    #pdf-container embed {
+        width: 100%;
+        height: 500px;
     }
 
     .clock-container {
