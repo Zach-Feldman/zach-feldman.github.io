@@ -689,14 +689,12 @@ button:hover{
         z-index: 900; /* Below the hamburger menu */
         overflow-y: auto; /* Enable scrolling */
         border: 1px #f6f8ff solid;
-        pointer-events: none;
     }
 
     .sidebar-container {
         margin: 84px 0 0 0;
         padding-top: 5px;
         background-color: #0437F2;
-        pointer-events: auto;
         border-top: 1px solid #f6f8ff;
     }
 
