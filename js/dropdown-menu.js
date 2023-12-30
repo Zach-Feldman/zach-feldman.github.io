@@ -3,13 +3,6 @@
 /* dropdown-menu.js for Zachary B. Feldman */
 
 $(document).ready(function() {
-
-    // // Dropdown toggle
-    // $('.dropdown-toggle').click(function() {
-    //     $(this).next('.dropdown-content').slideToggle();
-    //     $(this).toggleClass('dropdown-active');
-    // });
-
     // Function to apply the dropdown state
     function applyDropdownState(dropdownId, isOpen) {
         var $dropdownToggle = $('#' + dropdownId);
@@ -24,10 +17,21 @@ $(document).ready(function() {
         }
     }
 
+    // Function to close all dropdowns
+    function closeAllDropdowns() {
+        $('.dropdown-toggle').each(function() {
+            var dropdownId = $(this).attr('id');
+            applyDropdownState(dropdownId, false);
+        });
+    }
+
     // Dropdown toggle
     $('.dropdown-toggle').click(function() {
         var dropdownId = $(this).attr('id'); // Ensure each dropdown-toggle has a unique ID
         var isOpen = !$(this).hasClass('dropdown-active');
+
+        // Close all dropdowns before opening the selected one
+        closeAllDropdowns();
 
         // Store the state in local storage
         var dropdownState = JSON.parse(localStorage.getItem('dropdownState') || "{}");
