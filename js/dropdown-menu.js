@@ -23,7 +23,7 @@ $(document).ready(function() {
         });
     }
 
-    // Dropdown toggle
+    // Dropdown toggle click event
     $('.dropdown-toggle').click(function(event) {
         event.stopPropagation(); // Prevents the event from bubbling up the DOM tree
 
@@ -32,11 +32,6 @@ $(document).ready(function() {
 
         // Close all dropdowns except the current one
         closeAllDropdowns(dropdownId);
-
-        // Store the state in local storage
-        var dropdownState = JSON.parse(localStorage.getItem('dropdownState') || "{}");
-        dropdownState[dropdownId] = isOpen;
-        localStorage.setItem('dropdownState', JSON.stringify(dropdownState));
 
         // Apply the new state only to the selected dropdown
         applyDropdownState(dropdownId, isOpen);
@@ -47,21 +42,14 @@ $(document).ready(function() {
         event.stopPropagation();
     });
 
-    // Close all dropdowns when clicking outside
-    $(document).click(function() {
-        closeAllDropdowns();
-    });
-
     // Function to get the current page's related dropdown ID
     function getCurrentPageDropdownId() {
-        // Get the current URL path and split it into segments
         var currentPath = window.location.pathname;
         var currentSegments = currentPath.split('/').filter(Boolean);
         var currentFileName = currentSegments.pop(); // Get the last segment (filename)
 
         var currentPageId = '';
         $('.dropdown-content a').each(function() {
-            // Construct the relative URL for comparison
             var linkHref = $(this).attr('href');
             var linkSegments = linkHref.split('/').filter(Boolean);
             var linkFileName = linkSegments.pop(); // Get the last segment (filename)
@@ -75,32 +63,14 @@ $(document).ready(function() {
         return currentPageId;
     }
 
-    // // On page load, open the dropdown related to the current page
-    // var currentPageId = getCurrentPageDropdownId();
-    // if (currentPageId) {
-    //     applyDropdownState(currentPageId, true);
-    // } else {
-    //     // Close all dropdowns if the current page does not match any
-    //     closeAllDropdowns();
-    // }
-
     // Function to open the dropdown related to the current page
     function openCurrentPageDropdown() {
         var currentPageId = getCurrentPageDropdownId();
         if (currentPageId) {
             applyDropdownState(currentPageId, true);
-        } else {
-            // Close all dropdowns if the current page does not match any
-            closeAllDropdowns();
         }
     }
 
     // On page load, open the dropdown related to the current page
     openCurrentPageDropdown();
-
-    // Optional: Re-open the correct dropdown when the sidebar is opened in mobile mode
-    $('.hamburger-menu').click(function() {
-        openCurrentPageDropdown();
-    });
-
 });
