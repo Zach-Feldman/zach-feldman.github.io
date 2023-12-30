@@ -18,7 +18,6 @@ $(document).ready(function() {
       minuteHand.css("transform", `rotate(${minuteDegrees}deg)`);
       hourHand.css("transform", `rotate(${hourDegrees}deg)`);
 
-      console.log(now);
   }
 
   // Generate indicators

@@ -134,6 +134,10 @@ img{
     overflow-y: auto;
 }
 
+.sidebar-name {
+    display: none;
+}
+
 .sidebar-container{
     display: block;
     margin: 5px;
@@ -685,15 +689,20 @@ button:hover{
         z-index: 900; /* Below the hamburger menu */
         overflow-y: auto; /* Enable scrolling */
         border: 1px #f6f8ff solid;
+        pointer-events: none;
     }
 
     .sidebar-container {
-        margin: 80px 0 0 0;
-        border-top: 1px white solid;
+        margin: 85px 0 0 0;
+        padding-top: 5px;
+        height: 100%;
+        background-color: #0437F2;
+        pointer-events: auto;
     }
 
     .sidebar.active {
         left: 0; /* Slide in from the left */
+        background-color: transparent;
     }
 
     /* Adjust grid layout for mobile */
