@@ -1,7 +1,3 @@
-/*eslint-env es6*/
-
-/* dropdown-menu.js for Zachary B. Feldman */
-
 $(document).ready(function() {
     // Function to apply the dropdown state
     function applyDropdownState(dropdownId, isOpen) {
@@ -18,37 +14,73 @@ $(document).ready(function() {
     }
 
     // Function to close all dropdowns
-    function closeAllDropdowns() {
+    function closeAllDropdowns(exceptId) {
         $('.dropdown-toggle').each(function() {
             var dropdownId = $(this).attr('id');
-            applyDropdownState(dropdownId, false);
+            if (dropdownId !== exceptId) {
+                applyDropdownState(dropdownId, false);
+            }
         });
     }
 
     // Dropdown toggle
-    $('.dropdown-toggle').click(function() {
+    $('.dropdown-toggle').click(function(event) {
+        event.stopPropagation(); // Prevents the event from bubbling up the DOM tree
+
         var dropdownId = $(this).attr('id'); // Ensure each dropdown-toggle has a unique ID
         var isOpen = !$(this).hasClass('dropdown-active');
 
-        // Close all dropdowns before opening the selected one
-        closeAllDropdowns();
+        // Close all dropdowns except the current one
+        closeAllDropdowns(dropdownId);
 
         // Store the state in local storage
         var dropdownState = JSON.parse(localStorage.getItem('dropdownState') || "{}");
         dropdownState[dropdownId] = isOpen;
         localStorage.setItem('dropdownState', JSON.stringify(dropdownState));
 
-        // Apply the new state
+        // Apply the new state only to the selected dropdown
         applyDropdownState(dropdownId, isOpen);
     });
 
-    // On page load, apply the stored state for each dropdown
-    var savedState = JSON.parse(localStorage.getItem('dropdownState') || "{}");
-    $('.dropdown-toggle').each(function() {
-        var dropdownId = $(this).attr('id');
-        if (dropdownId in savedState) {
-            applyDropdownState(dropdownId, savedState[dropdownId]);
-        }
+    // Prevent dropdowns from triggering when clicking inside a dropdown content
+    $('.dropdown-content').click(function(event) {
+        event.stopPropagation();
     });
 
+    // Close all dropdowns when clicking outside
+    $(document).click(function() {
+        closeAllDropdowns();
+    });
+
+    // Function to get the current page's related dropdown ID
+    function getCurrentPageDropdownId() {
+        // Get the current URL path and split it into segments
+        var currentPath = window.location.pathname;
+        var currentSegments = currentPath.split('/').filter(Boolean);
+        var currentFileName = currentSegments.pop(); // Get the last segment (filename)
+
+        var currentPageId = '';
+        $('.dropdown-content a').each(function() {
+            // Construct the relative URL for comparison
+            var linkHref = $(this).attr('href');
+            var linkSegments = linkHref.split('/').filter(Boolean);
+            var linkFileName = linkSegments.pop(); // Get the last segment (filename)
+
+            if (currentFileName === linkFileName) {
+                currentPageId = $(this).closest('.dropdown-content').prev('.dropdown-toggle').attr('id');
+                return false; // Break the loop
+            }
+        });
+
+        return currentPageId;
+    }
+
+    // On page load, open the dropdown related to the current page
+    var currentPageId = getCurrentPageDropdownId();
+    if (currentPageId) {
+        applyDropdownState(currentPageId, true);
+    } else {
+        // Close all dropdowns if the current page does not match any
+        closeAllDropdowns();
+    }
 });
