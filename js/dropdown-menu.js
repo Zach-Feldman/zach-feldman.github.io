@@ -75,21 +75,32 @@ $(document).ready(function() {
         return currentPageId;
     }
 
-    // On page load, open the dropdown related to the current page
-    var currentPageId = getCurrentPageDropdownId();
-    if (currentPageId) {
-        applyDropdownState(currentPageId, true);
-    } else {
-        // Close all dropdowns if the current page does not match any
-        closeAllDropdowns();
+    // // On page load, open the dropdown related to the current page
+    // var currentPageId = getCurrentPageDropdownId();
+    // if (currentPageId) {
+    //     applyDropdownState(currentPageId, true);
+    // } else {
+    //     // Close all dropdowns if the current page does not match any
+    //     closeAllDropdowns();
+    // }
+
+    // Function to open the dropdown related to the current page
+    function openCurrentPageDropdown() {
+        var currentPageId = getCurrentPageDropdownId();
+        if (currentPageId) {
+            applyDropdownState(currentPageId, true);
+        } else {
+            // Close all dropdowns if the current page does not match any
+            closeAllDropdowns();
+        }
     }
 
-    // Listen for sidebar open event in mobile mode
-    $('.hamburger-menu').click(function() {
-        setTimeout(adjustDropdownForMobile, 300); // Adjust timing as necessary
-    });
+    // On page load, open the dropdown related to the current page
+    openCurrentPageDropdown();
 
-    // Initial setup on page load
-    adjustDropdownForMobile();
+    // Optional: Re-open the correct dropdown when the sidebar is opened in mobile mode
+    $('.hamburger-menu').click(function() {
+        openCurrentPageDropdown();
+    });
 
 });
