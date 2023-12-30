@@ -693,16 +693,15 @@ button:hover{
     }
 
     .sidebar-container {
-        margin: 85px 0 0 0;
+        margin: 84px 0 0 0;
         padding-top: 5px;
-        height: 100%;
         background-color: #0437F2;
         pointer-events: auto;
+        border-top: 1px solid #f6f8ff;
     }
 
     .sidebar.active {
         left: 0; /* Slide in from the left */
-        background-color: transparent;
     }
 
     /* Adjust grid layout for mobile */
