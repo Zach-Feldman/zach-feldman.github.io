@@ -687,6 +687,11 @@ button:hover{
         border: 1px #f6f8ff solid;
     }
 
+    .sidebar-container {
+        margin: 80px 0 0 0;
+        border-top: 1px white solid;
+    }
+
     .sidebar.active {
         left: 0; /* Slide in from the left */
     }
