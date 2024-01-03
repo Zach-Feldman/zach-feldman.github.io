@@ -43,8 +43,8 @@ form.addEventListener('submit', function(e) {
     .then(function() {
         form.reset();
         setTimeout(() => {
-            result.innerHTML = ""; // Clear the message after 3 seconds
+            result.innerHTML = "";
             result.classList.remove("result-message", "error");
-        }, 3000);
+        }, 6000);
     });
 });
