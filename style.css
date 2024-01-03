@@ -249,7 +249,7 @@ img{
 }
 
 .headshot{
-    width: 75%;
+    width: 100%;
 }
 
 #title-container{
@@ -746,16 +746,17 @@ button:hover{
         grid-area: main;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        height: 100%;
+        height: auto;
         z-index: 800;
-        border-right: 1px #f6f8ff solid;
-        border-left: 1px #f6f8ff solid;
-        border-top: 1px #f6f8ff solid;
-        border-bottom: 1px #f6f8ff solid;
+        border: 1px #f6f8ff solid;
     }
     
     .main-container{
         margin: 25px;
+        display: flex; /* Using flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        height: calc(100% - 50px); /* Adjust height considering the margin */
     }
 
     .main-container p{
@@ -827,19 +828,21 @@ button:hover{
     }
 
     .clock-container {
-        width: 100%;
-        height: 100dvh;
+        width: 50vmin; /* 50% of the viewport's smaller dimension */
+        height: 50vmin; /* Keep the same as width for a circular clock */
+        position: relative;
     }
 
     .clock {
         position: absolute;
-        width: 250px;
-        height: 250px;
+        width: 100%; /* Full width of the container */
+        height: 100%; /* Full height of the container */
         border-radius: 50%;
         margin: 0 auto;
-        transform: rotate(180deg) translate(50%, 50%); /* Adjust position */
-        top: 300px;
+
+        top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .second { 
