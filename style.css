@@ -750,8 +750,12 @@ button:hover{
         z-index: 800;
         border: 1px #f6f8ff solid;
     }
-    
+
     .main-container{
+        margin: 25px;
+    }
+    
+    .clock-mode{
         margin: 25px;
         display: flex; /* Using flexbox for centering */
         justify-content: center; /* Center horizontally */
@@ -831,6 +835,7 @@ button:hover{
         width: 50vmin; /* 50% of the viewport's smaller dimension */
         height: 50vmin; /* Keep the same as width for a circular clock */
         position: relative;
+        transform: rotate(180deg);
     }
 
     .clock {
